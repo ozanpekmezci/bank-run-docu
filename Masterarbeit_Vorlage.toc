@@ -1,0 +1,34 @@
+\select@language {english}
+\select@language {english}
+\contentsline {chapter}{List of Figures}{ii}
+\contentsline {chapter}{List of Tables}{iii}
+\contentsline {chapter}{\numberline {1}Einleitung}{2}
+\contentsline {chapter}{\numberline {2}oTree}{3}
+\contentsline {section}{\numberline {2.1}Introduction to oTree}{3}
+\contentsline {section}{\numberline {2.2}Concepts}{4}
+\contentsline {subsection}{\numberline {2.2.1}Session}{4}
+\contentsline {subsection}{\numberline {2.2.2}Subsession}{4}
+\contentsline {subsection}{\numberline {2.2.3}Group}{5}
+\contentsline {subsection}{\numberline {2.2.4}Participant and Player}{5}
+\contentsline {subsection}{\numberline {2.2.5}self}{5}
+\contentsline {section}{\numberline {2.3}Abschnittsname 1}{5}
+\contentsline {section}{\numberline {2.4}Abschnittsname 2}{6}
+\contentsline {subsection}{\numberline {2.4.1}Ein Unterabschnitt}{6}
+\contentsline {subsection}{\numberline {2.4.2}Ein weiterer Unterabschnitt}{6}
+\contentsline {chapter}{\numberline {3}Bank Run Experiment}{8}
+\contentsline {chapter}{\numberline {4}Bank Run Results}{9}
+\contentsline {chapter}{\numberline {5}Future Work and Conclusion}{10}
+\contentsline {chapter}{\numberline {A}Installing oTree}{11}
+\contentsline {section}{\numberline {A.1}Installing Python}{11}
+\contentsline {subsection}{\numberline {A.1.1}Installing Python on Windows}{11}
+\contentsline {subsection}{\numberline {A.1.2}Installing Python on Mac}{12}
+\contentsline {subsection}{\numberline {A.1.3}Installing Python on Linux}{12}
+\contentsline {section}{\numberline {A.2}Installing oTree}{12}
+\contentsline {section}{\numberline {A.3}Running oTree}{12}
+\contentsline {section}{\numberline {A.4}The Development Environment}{13}
+\contentsline {section}{\numberline {A.5}Troubleshooting}{13}
+\contentsline {subsection}{\numberline {A.5.1}Developer needs to have multiple python versions installed}{13}
+\contentsline {subsection}{\numberline {A.5.2}Developer needs to use dictionary values in template files}{14}
+\contentsline {subsection}{\numberline {A.5.3}Developers need to have custom number of rounds}{14}
+\contentsline {section}{\numberline {A.6}Erster Teil des Anhangs}{14}
+\contentsline {section}{\numberline {A.7}Zweiter Abschnitt dieses Anhangs}{14}

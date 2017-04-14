@@ -1,0 +1,331 @@
+% Vorlage fuer eine Studien- oder Diplomarbeit mit LaTeX
+%
+% Lehrstuhl fuer VWL, Technische Universitaet Muenchen
+%
+%
+% Diese Vorlage benutzt kein bibtex.
+% Wer moechte, kann eine eigene Literaturdatenbank anlegen:
+%  literatur.bib   (Literaturverzeichnis im BibTeX-Format)
+%
+% Ausserdem werden folgende Dateien benoetigt (muessen _nicht_
+% geaendert werden!):
+% ./einstell.tex   (allgemeine Einstellungen wie Seitengroesse etc.)
+% ./TUM_Logo.pdf (TUM-Logo fuer das Titelblatt)
+% ./Institutslogo.png (Instituts-Logo fuer das Titelblatt)
+% ./dummy.pdf (dient nur zu Demonstrationszwecken und kann spaeter entfernt werden)
+% ./psfig.sty
+%
+
+\input{einstell} % Stil- und Layoutdefinitionen
+
+\begin{document}
+
+\begin{titlepage}
+\voffset-40mm
+  \parbox{1.5cm}{\resizebox*{110pt}{!}{\includegraphics{TUM_Logo.pdf}}}\hspace{310pt}%
+  \parbox{1.5cm}{\resizebox*{63pt}{!}{\includegraphics{Institutslogo.png}}}%
+\vspace*{1.5cm}
+\begin{center}
+
+{\Huge Technische Universit\"at M\"unchen} 
+\\
+\vspace*{1cm}
+{\huge \sc{ TUM School of Management}} 
+\\ 
+\vspace*{2cm}
+{\Huge {\bf Interdisciplinary Project}}\\
+\vspace*{1cm}
+{\Large {\bf Programming on a web-based platform for conducting experiments using the example of dynamic bank runs }}\\
+\vspace*{4cm}
+{ 
+\begin{tabular}{ll}
+Supervisor: & Univ.-Prof. Dr. Robert K. Frhr. von Weizs\"{a}cker \\
+			& Lehrstuhl f\"{u}r Volkswirtschaftslehre\\
+			& Finanzwissenschaft und Industrie\"{o}konomik\\
+			& Technische Universit\"{a}t M\"{u}nchen \vspace*{0.3cm} \\ 
+Advisor: & M.Sc. Christoph Gschnaidtner 		\vspace*{0.3cm}  \\
+Graduate program: & Informatics		\vspace*{0.3cm} \\ 
+Author: & Ozan Pekmezci \\
+		& Steinickeweg 7 App 313 80798 Munich \\
+		& 03636264 \vspace*{0.3cm} \\
+Submission date: & 01. April 2017
+\end{tabular}
+}
+
+\end{center}
+\end{titlepage}
+
+\begin{abstract}
+The abstract should contain approx. 200 words and accurately and briefly summarize the presented work.
+\end{abstract}
+
+\begin{abstract}
+Der Abstract sollte ca. 200 Worte umfassen und die Arbeit kurz und pr\"agnant zusammenfassen.
+\end{abstract}
+
+
+
+\thispagestyle{plain}
+\vspace*{11cm}
+\noindent
+I hereby declare that the documentation submitted is my own unaided work. All direct or indirect sources used are acknowledged as references. \\
+
+I am aware that the documentation in digital form can be examined for the use of unauthorized aid and in order to determine whether the documentation as a whole or parts incorporated in it may be deemed as plagiarism. For the comparison of my work with existing sources I agree that it shall be entered in a database where it shall also remain after examination, to enable comparison with future theses submitted. Further rights of reproduction and usage, however, are not granted here.\\
+ 
+This paper was not previously presented to another examination board and has not been published. \\\\\\\\
+
+M\"{u}nchen, 01. April 2017
+
+\newpage
+
+%vertikaler Leerraum
+\vspace*{2.2cm}
+
+\noindent%kein Einzug
+{\Huge {\bf Acknowledgment}} \\
+\vspace*{1.6cm} \\
+
+I want to thank ...
+
+%Seitennummerierung "roemisch
+\pagenumbering{roman}\setcounter{page}{0} %Seite vor Inhaltsverzeichnis nicht nummeriert
+%Kopfzeilen (automatisch erzeugt)
+\pagestyle{headings}
+
+
+\tableofcontents      %  Inhaltsverzeichnis
+
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+
+\addcontentsline{toc}{chapter}{List of Tables} 
+\listoftables
+ 
+ 
+
+\pagenumbering{arabic}
+ 
+
+
+\chapter{Einleitung} \label{cha:einleitung}
+
+An dieser Stelle steht die Einleitung der Diplomarbeit.
+
+
+
+\chapter{oTree} \label{cha:otree}
+
+\section{Introduction to oTree}
+
+oTree is a n open-source framework that is designed to do interactive experiments on economics. It is based on Django which is a web framework that is designed for Python programming language.
+
+\begin{figure}[h]
+	\centerline{\psfig{figure=django_mvc_mvt_pattern.jpg,width=120mm}}
+	\caption{Abstraction of MVT Pattern[\cite{DjangoOverview2017}]}
+	\label{fig:picture2}
+	
+\end{figure}
+
+The design pattern used by Django and also by oTree is \verb|MVT| [\cite{DjangoOverview2017}]. MVT means \verb|model-view-template| and that terminology explains what types of components the application consists of[\ref{fig:picture2}].  
+
+This pattern explains that there is a model component that is responsible for the backend in general. It generates the database fields and it is responsible for the business logic. It does the calculations etc.
+
+The template component consists of multiple html files that are called by the view. It determines how the page should look like and what the page shows.
+
+The view on the other hand is a connection between model and template. It sends the template the required variables and also receive some information from the model. It is responsible for the working sequence of the application.
+
+\section{Concepts}
+
+\begin{figure}[h]
+	\centerline{\psfig{figure=oTreeConcepts.png,width=120mm}}
+	\caption{Conceptual Overview of oTree[\cite{oTreeConcepts2017}]}
+	\label{fig:picture3}
+	
+\end{figure}
+
+\subsection{Session}
+
+A session can be thought as an whole experiment. It can consist of many subsessions. For example, a session can be a public goods game plus a questionnaire[\cite{oTreeConcepts2017}].
+
+\subsection{Subsession}
+
+Subsessions are parts of the session as the name suggests. In the above example, public goods game is one subsession and the questionnaire is another subsession. Each subsession have multiple pages that is going to be explained in the views part[TODO page cite]
+
+\begin{figure}[h]
+	\centerline{\psfig{figure=objectHierarchy.png,width=60mm}}
+	\caption{Object Hiearchy of oTree[\cite{oTreeConcepts2017}]}
+	\label{fig:picture4}
+	
+\end{figure}
+
+\subsection{Group}
+
+A group consists of players that are taking part in the same subsession of the session. Therefore, a subsession is divided into a groups of players[Figure \ref{fig:picture4}].
+
+\begin{figure}[h]
+	\centerline{\psfig{figure=participant.png,width=120mm}}
+	\caption{Concept of Participant explained[\cite{oTreeConcepts2017}]}
+	\label{fig:picture5}
+	
+\end{figure}
+
+\subsection{Participant and Player}
+
+Player in oTree is just an instance of the concept Participant. There is a different Player instance for every round and for each real-life player. These instances can have different payoffs and different attributes. However, each real-life player have one participant for each subsession and her attributes stay the same for the whole subsession[Figure \ref{fig:picture5}].
+
+\subsection{self}
+
+As the readers check out the code, they will see the variable self very often. It is a Python-spefic instance that describes the context and can be compared to \verb|this| in Java programming language. oTree functions will mostly expect self as a parameter and these functions can be called by command \verb|self.functionName()|.
+
+
+
+\section{Abschnittsname 1}
+
+Mathematische Zeichen $p_{ij}$ werden innerhalb des Textes wie hier wiedergegeben, Matrizen $\mat{P}$ und Vektoren  $\mat{x}=\left(x1, x2, x3\right)^T$ ebenso. Gleichungen werden abgesetzt und nummeriert
+\begin{equation}
+  \mat{\zeta}(n+1) = \mat{P} \mat{\zeta}(n), \quad \mat{\zeta}(0) = \mat{\zeta}_0,
+\label{Gleichung1}
+\end{equation}
+oder nicht nummeriert
+\begin{equation*}
+  \mat{\zeta}(n+1) = \mat{P} \mat{\zeta}(n), \quad \mat{\zeta}(0) = \mat{\zeta}_0,
+\end{equation*}
+angegeben. Verweise auf Gleichungen wie hier, vgl. (\ref{Gleichung1}). Literaturverweise im laufenden Text vgl. \cite{sharpe1964} oder in Klammern gesetzt (vgl. \cite{sharpe1964}).\footnote{oder in einer Fu\ss{}note: vgl. \cite{sharpe1964}, S. 123}
+
+
+\section{Abschnittsname 2}
+
+Ein weiterer Abschnitt.
+
+\subsection{Ein Unterabschnitt}
+
+Dies ist der erste Unterabschnitt des zweiten Abschnittes. Auf jeder Gliederungsebene m\"ussen mindestens zwei Punkte verortet sein. Also: kein 2.2.1 ohne 2.2.2! Deswegen folgt nun ...
+
+\subsection{Ein weiterer Unterabschnitt}
+
+Verweise auf Bilder (vgl. Bild \ref{fig:bildreferenz1}), Tabellen (vgl. Tabelle \ref{tab:tabellenreferenz1}) oder Literaturangaben (vgl. \cite{sharpe1964}) wie hier angegeben. Es k\"onnen auch mehrere Literaturangaben gleichzeitig zitiert werden, vgl. \cite{sharpe1964, xyz2008}.
+
+Ein Bild wird folgenderma\ss{}en eingebunden:
+
+\begin{figure}[h]
+  \centerline{\psfig{figure=dummy.pdf,width=120mm}}
+  \caption{Bildbeschriftung}
+  \label{fig:bildreferenz1}
+\end{figure}
+
+Nat\"urlich kann auch eine Tabelle eingef\"ugt werden:
+\begin{table}[htbp]
+	\caption{Tabellenname.}
+	\centering
+		\begin{tabular}{|l|c|c|}
+			\hline
+			 & Spalte 1 & Spalte 2\\
+			 \hline
+			 Zeile 1 & Eintrag 1,1 & Eintrag 1,2\\
+			 \hline
+			 Zeile 2 & Eintrag 2,1 & Eintrag 2,2\\
+			 \hline			
+		\end{tabular}
+	\label{tab:tabellenreferenz1}
+\end{table}
+
+\chapter{Bank Run Experiment} \label{cha:bankRunExperiment}
+
+\chapter{Bank Run Results} \label{cha:bankrunResults}
+
+\chapter{Future Work and Conclusion}
+
+Im Rahmen der vorliegenden Arbeit wurde ...
+
+% --- Falls Anhaenge gewuenscht werden: ---
+\begin{appendix} \label{anhang}
+\chapter{Installing oTree} \label{anhang1}
+
+\section{Installing Python}
+
+This sections explains how to install Python on different operating systems. 
+
+\subsection{Installing Python on Windows}
+
+Windows users can install Python with the setup file that can be downloaded from \verb|https://www.python.org/downloads/release/python-360/|. Users 
+need to choose marked fields(\ref{fig:picture1}) and the installer will install both python and required tool \verb|pip| to download other packages.
+
+\begin{figure}[h]
+	\centerline{\psfig{figure=py-win-installer.png,width=120mm}}
+	\caption{Python Installation Screen on Windows}
+	\label{fig:picture1}
+\end{figure}
+
+
+After that users can navigate to  \verb|PowerShell| application and test the installation by typing  \verb|pip3 -V|. If it shows the right version number, user download other packages etc.
+
+
+\subsection{Installing Python on Mac}
+
+The official oTree documentation recommends using \verb|Homebrew| package manager on MacOS to install Python. However, mac users need to install \verb|Command line developer tools| first, which is going to install many essential libraries and programs to start developing on mac. After that users can download Homebrew and lastly install Python. Users can test the installation by typing \verb|pip3 -V| on the Terminal just like on Windows [\cite{oTreeInstall2017}].
+
+\subsection{Installing Python on Linux}
+
+Python can be installed easily on a Debian/Ubuntu based Linux distribution by typing the command \verb|sudo apt-get install python3-pip| on Terminal. The installation can also tested with the same command like on other operating systems.
+
+\section{Installing oTree}
+
+Users can install otTree easily by typing the command \verb|pip3 install -U otree-core| on Powershell(for Windows) or on Terminal for Unix based operating systems. The same command is also used to upgrade the oTree versions in the future.
+
+\section{Running oTree}
+
+Users that run oTree for the first time need to type in the command \verb|otree startproject oTree|, which will generete an \verb|oTree| folder containing necessary files and example projects. After that users can navigate to the newly generated folder by using the command \verb|cd oTree|. 
+
+When you are in the right folder, users first need to migrate and reset the database. This is done with the command \verb|otree resetdb| and it needs to be applied everytime when there is a change in the model file[TODO: citation model file]. Finally, users can run the server with command \verb|otree runserver|. To stop the server, pressing on both \verb|ctrl and c| keys is enough. On the same terminal tab, oTree states the local address that the oTree is running on, which is mostly \verb|http://127.0.0.1:8000/|. Users can visit this link on their own browser.
+
+\section{The Development Environment}
+
+Although Python code can be written on any text editor even on Terminal, the IDE \verb|PyCharm| is recommended by both the official documentation and the author of this documentation. It provides autocompletion and also makes it much harder to make errors. PyCharm has both free and paid versions but students or teachers(including teaching assistants) can get the paid version for free. The paid version features Django support that the oTree is built on. Developers just need to import the oTree folder, enable Django support on the settings and set the root folder of oTree as \verb|Django project root |. 
+
+\section{Troubleshooting}
+
+\subsection{Developer needs to have multiple python versions installed}
+
+Some developers may have an issue that they need to have a one specific Django/Python version for a not oTree related project and another one for the oTree. In that case users won't be able to run one of the projects or they will need to install/uninstall every time. However, there is a solution for that. 
+
+Developers can install the Python package \verb|virtualenv| just with \verb|pip install virtualenv| command. Like the name suggests, this little program creates virtual environments for each folder structure so that users can install different python/Django or any other package without interfering with each other. To use it, developers must navigate to the desired folder and type the command \verb|virtualenv env| which will create the environment \verb|env| folder. After that developers need to type the code \verb|source env/bin/activate| every time they want to run the environment. 
+
+\subsection{Developer needs to use dictionary values in template files}
+
+\subsection{Developers need to have custom number of rounds}
+
+\section{Erster Teil des Anhangs}
+
+\section{Zweiter Abschnitt dieses Anhangs}
+
+\end{appendix}
+
+% --- Und vielleicht noch ein Abbildungsverzeichnis ... ---
+
+
+
+% --- Das Literaturverzeichnis: ---
+
+\begin{thebibliography}{XX}
+	
+\bibitem[oTree (2016)]{oTree2016} Chen, D.L., Schonger, M., Wickens, C., 2016. oTree - An open-source platform for laboratory, online and field experiments. Journal of Behavioral and Experimental Finance, vol 9: 88-97
+
+\bibitem[Heston (1993)]{Heston1993} Heston, S. (1993). A closed-form solution for options with stochastic volatility with applications to bond and currency options.
+The Review of Financial Studies, Volume 6, Issue 2, pp. 327-343
+
+\bibitem[Sharpe(1964)]{sharpe1964} Sharpe, W. (1964). Capital Asset Prices -- A Theory of Market Equilibrium Under Conditions of Risk. Journal of Finance, Vol. 19, pp. 77-91
+
+\bibitem[oTree(2017)]{oTree2017} oTree. (2017). Official Documentation of oTree, \verb|otree.readthedocs.io|
+
+\bibitem[oTree Installation(2017)]{oTreeInstall2017} oTree. (2017). Official Documentation of oTree,\\ \verb|otree.readthedocs.io/en/latest/install.html|
+
+\bibitem[Django Overview(2017)]{DjangoOverview2017} Tutorialspoint. (2017). Django Tutorial,\\ \verb|https://www.tutorialspoint.com/django/django_overview.htm|
+
+\bibitem[oTree Concepts(2017)]{oTreeConcepts2017} oTree. (2017). oTree Concepts,\\ \verb|http://otree.readthedocs.io/en/latest/conceptual_overview.html|
+
+
+
+\end{thebibliography}
+
+
+\end{document}

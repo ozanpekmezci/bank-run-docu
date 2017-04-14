@@ -1,0 +1,117 @@
+%
+%  einstell.tex - Allgemeine Einstellungen
+%
+% ---------------------------------------------------------
+%       Diese Datei ist Teil der LaTeX-Vorlage f�r
+%             Studien-und Diplomarbeiten am
+%    HVB-Stiftungsinstitut f�r Finanzmathematik, TUM
+%
+%
+% Weitere Informationen finden Sie in  diplomarbeit.tex .
+% ---------------------------------------------------------
+%
+
+% Formatierungseinstellungen
+
+\documentclass[12pt,a4paper]{report}
+%\documentclass[12pt,twoside,a4paper]{report}
+
+\usepackage{a4}
+\usepackage{psfig}
+\usepackage{fancyhdr}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+%-----------------------
+
+\NeedsTeXFormat{LaTeX2e}
+\usepackage[dvips]{epsfig}
+\usepackage[latin1]{inputenc}
+%\usepackage[numbers, square, sort&compress]{natbib}    % Argument numbers f�r numerische Auflistung in Literaturverzeichnis, sonst Name-Jahr Auflistung
+\usepackage{natbib}
+\usepackage{float}
+\usepackage{verbatim}
+\usepackage{longtable}
+\usepackage{tabularx}       % Fuer Tabellen laenger als eine Seite
+\usepackage{multicol}
+\usepackage[english]{babel}  %%%%
+\usepackage{bibgerm}
+\usepackage{color}
+\usepackage{wrapfig}
+%\usepackage{hangcaption}
+\usepackage{floatflt}
+\usepackage{afterpage}
+\usepackage{moreverb}       % z.B. \listinginput
+%\usepackage{epstopdf}
+
+% --------------------
+
+% Seitendefinitionen
+
+\setlength{\topmargin}{1.5cm}
+\setlength{\headheight}{15pt}
+\setlength{\headsep}{20pt}
+\setlength{\topskip}{12pt}
+\setlength{\evensidemargin}{0pt}
+\setlength{\oddsidemargin}{0pt}
+\setlength{\textheight}{240mm}
+\setlength{\textwidth}{160mm}
+\setlength{\voffset}{-2cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\sloppy
+\frenchspacing
+
+\pagestyle{fancyplain}                               % Kopfzeilen definieren
+ % f"ur documentclass 'article':
+%\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+%\renewcommand{\subsectionmark}[1]{\markright{\thesubsection\ #1}}
+ % f"ur documentclass 'report':
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter \hspace{3mm}#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\cfoot[\fancyplain{}{}]{\fancyplain{}{}}
+\lhead[\fancyplain{}{\small\sl\thepage}]%
+      {\fancyplain{}{\small\sl\leftmark}}
+\rhead[\fancyplain{}{\small\sl\rightmark}]%
+      {\fancyplain{}{\small\sl\thepage}}
+%\footrulewidth 0pt
+
+\newcommand{\entwurf}{\usepackage[german,light,first,bottomafter]{draftcopy}
+  \draftcopyName{Entwurf vom \heute}{50}
+  \draftcopySetGrey{0.650}}
+\newcommand{\entwurfzwo}{\usepackage[german,light,bottom,none]{draftcopy}
+  \draftcopyName{Entwurf vom \heute}{50}
+  \draftcopySetGrey{0.650}}
+
+\renewcommand{\baselinestretch}{1.25}                % Zeilenabstand
+\AtBeginDocument{\renewcommand{\figurename}{Figure}}   % Bezeichnung fuer Abbildungen
+\renewcommand{\textfraction}{0}
+\newcommand{\clearemptydoublepage}{%                 % neue Kapitel auf ungerade Seite
+  \newpage{\pagestyle{empty}%
+  \cleardoublepage}}
+\newcounter{saveeqn}                                 % equation numbering (2.10 a)
+\newcommand{\alpheqn}{%
+  \stepcounter{equation}%
+  \setcounter{saveeqn}{\value{equation}}%
+  \setcounter{equation}{0}%
+  \renewcommand{\theequation}{\arabic{chapter}.\arabic{saveeqn} \alph{equation}}}
+\newcommand{\reseteqn}{%
+  \setcounter{equation}{\value{saveeqn}}%
+  \renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}}
+\newcommand{\sgn}[1]{\rm sgn\left(#1\right)}         % sign-function
+\newcommand{\vektor}[1]{\left(\begin{array}{c}#1\end{array}\right)} % Vektoren
+\newcommand{\bm}[1]{{\mbox{{\boldmath$#1$}}}}        % Fettdruck in Formeln
+\newcommand{\mat}[1]{\boldsymbol{#1}}
+
+\newcommand{\heute}{\number\day. \ifcase\month\or
+  Januar\or Februar\or Maerz\or April\or Mai\or Juni\or
+  Juli\or August\or September\or Oktober\or November\or Dezember\fi
+  \space \number\year}
+
+\newtheorem{satz}{Satz}[chapter]
+
+\newcommand{\halmos}{\quad\hfill\mbox{$\Box$}}        % Beweisendezeichen
+
+\def\bigdot{$\bullet$}                               % dicker schwarzer Punkt
