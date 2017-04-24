@@ -55,13 +55,6 @@ Submission date: & 01. April 2017
 \end{center}
 \end{titlepage}
 
-\begin{abstract}
-The abstract should contain approx. 200 words and accurately and briefly summarize the presented work.
-\end{abstract}
-
-\begin{abstract}
-Der Abstract sollte ca. 200 Worte umfassen und die Arbeit kurz und pr\"agnant zusammenfassen.
-\end{abstract}
 
 
 
@@ -77,15 +70,6 @@ This paper was not previously presented to another examination board and has not
 M\"{u}nchen, 01. April 2017
 
 \newpage
-
-%vertikaler Leerraum
-\vspace*{2.2cm}
-
-\noindent%kein Einzug
-{\Huge {\bf Acknowledgment}} \\
-\vspace*{1.6cm} \\
-
-I want to thank ...
 
 %Seitennummerierung "roemisch
 \pagenumbering{roman}\setcounter{page}{0} %Seite vor Inhaltsverzeichnis nicht nummeriert
@@ -107,17 +91,15 @@ I want to thank ...
  
 
 
-\chapter{Einleitung} \label{cha:einleitung}
+\chapter{Introduction } \label{cha:einleitung}
 
-An dieser Stelle steht die Einleitung der Diplomarbeit.
+//TODO
 
+This is a project to program an experiment 
 
+\section{Introduction to oTree}\label{sec:intro}
 
-\chapter{oTree} \label{cha:otree}
-
-\section{Introduction to oTree}
-
-oTree is a n open-source framework that is designed to do interactive experiments on economics. It is based on Django which is a web framework that is designed for Python programming language.
+oTree is an open-source framework that is designed to do interactive experiments on economics. It is based on Django which is a web framework that is designed for Python programming language.
 
 \begin{figure}[h]
 	\centerline{\psfig{figure=django_mvc_mvt_pattern.jpg,width=120mm}}
@@ -169,29 +151,117 @@ A group consists of players that are taking part in the same subsession of the s
 	
 \end{figure}
 
-\subsection{Participant and Player}
+\subsection{Participant and Player}\label{sub:participant}
 
 Player in oTree is just an instance of the concept Participant. There is a different Player instance for every round and for each real-life player. These instances can have different payoffs and different attributes. However, each real-life player have one participant for each subsession and her attributes stay the same for the whole subsession[Figure \ref{fig:picture5}].
+
+\begin{figure}[h]
+	\centerline{\psfig{figure=object_model_self.png,width=120mm}}
+	\caption{Reachable objects via self[\cite{oTreeConcepts2017}]}
+	\label{fig:picture6}
+	
+\end{figure}
 
 \subsection{self}
 
 As the readers check out the code, they will see the variable self very often. It is a Python-spefic instance that describes the context and can be compared to \verb|this| in Java programming language. oTree functions will mostly expect self as a parameter and these functions can be called by command \verb|self.functionName()|.
 
+This means that if the method accepts self in the \verb|Page| class, self refers to the Page object. Since the class Page is a subclass of the \verb|Player| class[Figure \ref{fig:picture4}],  Player can be referenced with \verb|self.player|. This logic is also explained in Figure \ref{fig:picture6}. Subclasses can refer to their superclasses but the opposite doesn't work. Extra to that, Player can refer to \verb|Participant| class via self, that is also explained in the subsection \ref{sub:participant}. 
+
+Furthermore, there are also many cases that the developers can refer from superclass to subclass. However, it is a bit different and can be explained easier with an example. Every player is part of only one group but each group consists of multiple players. That's why it is easy to refer to the group just by saying \verb|self.group|, but players in a group need to be referred with \verb|self.get_players()|, that will return a list of players. There are many similar examples on the official documentation of oTree [\cite{oTreeConcepts2017}]. 
+
+\section{Components}
+
+\subsection{Model}
+
+The model conponent of MVT[Section \ref{sec:intro}] pattern is programmed in the file \verb|models.py|. The file contains four classes: \verb|Constants, Subsession, Group and Player| 
+
+Constants class is the place that put variables that don't ever change in the game. The class has three required fields, which are \verb|name_in_url, players_per_group and num_rounds|. \verb|name_in_url| is the name of the the app that is going to appear on the url. \verb|players_per_group| defines how many players can be in each group. If it has the value \verb|None|, all of the players will be in the same group. \verb|num_rounds| describes the amount of rounds that the experiment will go on. It needs to have a static integer value. Constant values should never be modified to prevent unexpected behaviour[\cite{oTreeModel2017}]. 
+
+\begin{figure}[h]
+	\centerline{\psfig{figure=before_session_starts.png,width=120mm}}
+	\caption{An example usage of the method[\cite{oTreeModel2017}]}
+	\label{fig:picture7}
+	
+\end{figure}
+
+In the context of oTree, subsession actually means a round. Therefore, this class contains round-specific information. Its method \verb|before_session_starts| is important because it is the recommeded place to prepare and assign data to  player for each round. However, it must be noted that this method is called once for each round \verb|before the session starts|. That's why no developers shouldn't use variables that change during the game.  A typical usage is looping through players and doing some operations for them[Figure \ref{fig:picture7}].
+
+\begin{figure}[h]
+	\centerline{\psfig{figure=playerModel.png,width=120mm}}
+	\caption{Player class of bank run experiment}
+	\label{fig:picture8}
+\end{figure}
+
+Model file also contains fields for the classes that are used to generate database columns for select tables. There are some special types of fields that are inherited from Django can be used on the starting lines of classes. The field \verb|models.CharField()| can be used for strings, \verb|models.FloatField()| for floats(real decimal numbers), \verb|models.BooleanField()| for boolean values, \verb|models.IntegerField()| and \verb|models.PositiveIntegerField()| for integers. oTree also supports an extra field \verb|models.CurrencyField()| for currencies [Figure \ref{fig:picture8}]. 
+
+\begin{figure}[h]
+	\centerline{\psfig{figure=page_sequence.png,width=60mm}}
+	\caption{Page sequence list of bank run experiment}
+	\label{fig:picture9}
+\end{figure}
+
+\subsection{View}
+
+As it was explained in the introduction part of oTree[\ref{sec:intro}],the view component takes care of the application sequence. It also the connector between model and template. The view file contains a class for each page that  will appear and the sequence of these pages are stated in the \verb|page_sequence| list in desired order[Figure \ref{fig:picture7}]. Pages can be divided into two general categories. They are pages and wait pages. Page classes expect the argument type \verb|Page| and wait pages expect the argument type \verb|WaitPage|.
+
+\begin{figure}[h]
+	\centerline{\psfig{figure=page.png,width=120mm}}
+	\caption{A Page class of the bank run experiment}
+	\label{fig:picture10}
+\end{figure}
+
+\subsubsection{Page}
+
+Pages contain information about the code that is going to run on client-side(users browser). Pages can describe the form that is shown on the page and can connect the server-side implementation of the form with the client-side implementation. These get set with \verb|form_model and form_fields| variables[Figure \ref{fig:picture10}].
+
+There are also other attributes that can be used inside the page classes. For example, if user wants to set a timeout for users to respond to the form, developers can use \verb|timeout_seconds and timeout_submission| variables. Former one sets the maximal time to respond in seconds and the latter one decides what is going to happen if the user doesn't response in the desired time.
+
+Page classes can also contain some methods that are useful for many applications. One of them is \verb|is_displayed(self)|; it determines in which condition users see the page. \verb|vars_for_template(self)| method returns some custom variables to the template, \verb|before_next_page(self)| method gives developer the option to do some operations after user responds to the form and navigates to the next page.
+
+\subsubsection{Wait Page}
+
+Wait Pages are used to make sure users start each part of the experiment at the sime time. Users that respond fast wait until the others respond to that form as well. Users see a loading page while waiting. An important method of the wait page class is \verb|after_all_players_arrive(self)|. This determines what to do when all players reach the desired wait page. It can be used to call some functions in the models file. Developers can also choose to customize the appereance of the wait page[\cite{oTreeView2017}].
+
+\begin{figure}[h]
+	\centerline{\psfig{figure=html.png,width=120mm}}
+	\caption{Some code sample of a HTML file[\cite{DjangoTemplate2017}].}
+	\label{fig:picture10}
+\end{figure}
+
+\subsection{Template}
+
+Templates are coded in html files and oTree uses Django's template language[\cite{DjangoTemplate2017}]. HTML code can be written on the files directly but python code can be written in a different format. Variables can be used in double brackets(\verb|{{example}}|). Tags like \verb|for loops, if clauses| are written between brackets and percent signs [Figure\ref{fig:picture10}]. 
+
+\section{Introduction to Bank Runs}
+
+Banks that use fractional-reserve-banking system store only a small fraction of their assets as cash. However, this can be problematic if many people try to withdraw money in a short time. When more people withdraw money and withdrawing gains a momentum for some reason, bank can run out of cash and go bankrupt [\cite{Diamond2007}]. At this point money of everybody that deposited to the bank is gone. 
+
+To prevent that, banks may limit the money to withdraw or just cancel withdrawing for some time. This text is the documentation of a platform that is aiming to experiment how these bank runs happen.
+
+The starting point of this project are the empirical studies that are conducted to test predictions of theoretical models and investigate the behaviour of people during withdrawal process. One of the empirical studies that is reviewed and tested by the author is  \verb|The Madies Study| [\cite{Madies2007}].
+
+\subsection{The Madies Study}\label{sub:madies}
+
+Madies sets an experiment environment with some defined amount of participants, periods, amount to withdraw and an upper limit for bankruptcy. Participants are  people that take part in the experiment, periods mean withdrawing the money earlier or later, amount to withdraw differentiate between periods and bank going bankrupt. Lastly, upper limit is the amount of withdrawing people that make the bank go bankrupt. The time model of this experiment is discrete meaning that participants do actions simultaneously.
+
+\begin{figure}[h]
+	\centerline{\psfig{figure=madies.png,width=120mm}}
+	\caption{Visualisation of the Madies Study[\cite{Madies2007}]}
+	\label{tab:tabellenreferenz2}
+	
+\end{figure}
 
 
-\section{Abschnittsname 1}
+The game is played for thirty rounds and in each round participants are asked if they want to withdraw in period one or two. Advantage of withdrawing on period 1 is the fact that the participants have higher chance to be able to withdraw their money. However, if they choose to withdraw their money on period 2, they will get their money plus interest if the bank didn't go bankrupt before[Figure \ref{tab:tabellenreferenz2}].
 
-Mathematische Zeichen $p_{ij}$ werden innerhalb des Textes wie hier wiedergegeben, Matrizen $\mat{P}$ und Vektoren  $\mat{x}=\left(x1, x2, x3\right)^T$ ebenso. Gleichungen werden abgesetzt und nummeriert
-\begin{equation}
-  \mat{\zeta}(n+1) = \mat{P} \mat{\zeta}(n), \quad \mat{\zeta}(0) = \mat{\zeta}_0,
-\label{Gleichung1}
-\end{equation}
-oder nicht nummeriert
-\begin{equation*}
-  \mat{\zeta}(n+1) = \mat{P} \mat{\zeta}(n), \quad \mat{\zeta}(0) = \mat{\zeta}_0,
-\end{equation*}
-angegeben. Verweise auf Gleichungen wie hier, vgl. (\ref{Gleichung1}). Literaturverweise im laufenden Text vgl. \cite{sharpe1964} oder in Klammern gesetzt (vgl. \cite{sharpe1964}).\footnote{oder in einer Fu\ss{}note: vgl. \cite{sharpe1964}, S. 123}
+In this particular environment, bank goes bankrupt if four or more people withdraws in period 1. First three participants can withdraw 40 unit currency and the rest get 0. In the bankruptcy case, participants that choose period 2 can't withdraw any money. If three or less participants choose to withdraw on period 1, they all get 40 unit currency in period 1 and the rest get 45 unit currency in period 2.
 
+The problem with this study are the facts that, participants can only withdraw a static amount of money and bank goes bankrupt depending on amount of people instead of  money amount. These drawbacks are considered and imporoved in our experiment which is explained in the next chapter.
+
+
+%
+\iffalse
 
 \section{Abschnittsname 2}
 
@@ -228,14 +298,60 @@ Nat\"urlich kann auch eine Tabelle eingef\"ugt werden:
 		\end{tabular}
 	\label{tab:tabellenreferenz1}
 \end{table}
+%
+\fi
+
 
 \chapter{Bank Run Experiment} \label{cha:bankRunExperiment}
 
-\chapter{Bank Run Results} \label{cha:bankrunResults}
+The aim of this project is experimenting with the oTree framework and test how it actually works. The topic of bank runs is chosen as en example for it. 
+
+Bank run experiment can be done in different settings or environments. In this one we want to use variables rather than constants. This means that we want to have modifiable number of player, rounds, thresholds etc. 
+
+The main logic is similar to the Madies Study which is an empirical study for bank runs [Section \ref{sub:madies}]. It has some more extra features that are going to explained in the upcoming sections.
+
+\section{Setting and Environment}
+
+Like it is said above, the bank run experiment uses as many changeable values as possible to give flexibility to the experimenters. Experimenters can find the optimal values to make correct observations. 
+
+This experiment simulates people that have a starting amount that is determined by the experimenter. However, all of the participants receive the same starting money. Participants can store their money in a risk-free investment or they can choose to put their money on the bank. Storing money in the investment has the advantage of not getting affected by a possible bankruptcy but depositing money to the bank gives you an interest per round. The interest is determined by the experimenter as well. 
+
+The game is played until the bank goes bankrupt or the last round is reached. The last round of the game is also set by the experimenter but it must be greater than two because the first round of the experiment is deciding if participants want to deposit money on a investment or to the bank. Starting from second round, participants decide if they want to keep their money at the bank or  withdraw it. Some participants are forced to withdraw money from the bank. This is totally random and the experimenter can decide the percent of participants that will be forced to withdraw. Experimenters can also decide how much money that the chosen participants need to withdraw minimally. 
+
+If threshold of withdrawals is reached, the bank goes bankrupt and the game ends. This threshold can also be set by the experimenter. It is given as a percentage and the threshold is calculated by the multiplication of the percantage and total money that is deposited to the bank at the beginning of the game. 
+
+oTree has built-in support of changeable participant value. No extra work is done for that. Lastly, experimenters can also choose between allowing to watch others or not. If its allowed, users can see current information about other users at the end of each round. Else, they can only see this information when the game ends.
+
+\section{oTree Platform}
+
+Initially, the experiment was planned to be played continuously instead of being discrete. According to the plan, game would have no rounds. Meaning that, users would be able to deposit or withdraw anytime and the application would react accordingly. However, continuous-time games were not part of oTree as of 2017 but the oTree team have stated that they plan to add this feature in the future[\cite{oTreeSlides2007}]. That's why the developer of this project enabled withdrawing dynamic amount of money. The game also has non-static number of rounds in contrast to the Madies Study[Section \ref{sub:madies}].
+
+\begin{figure}[h]
+	\centerline{\psfig{figure=minValue.png,width=120mm}}
+	\caption{Form from bank run doesn't allow negative values }
+	\label{tab:tabellenreferenz11}
+	
+\end{figure}
+
+Withdrawals of dynamic values are trivial in oTree, since it requires only one \verb|models.CurrencyField| field in models file and corresponding form fields in the view[Section \ref{sec:intro}]. CurrencyField can accept parameters for minimum and maximum values, which limits users for entering amounts in the desired range. This is really useful because this limitation occurs on the client-side and form only gets submitted when user enters a "correct" value. Problem is the fact that these min and max arguments can only be static values since the code is executed on the setup phase. That's why developers can't set arguments that depend on other values. In the context of  bank run experiment, it was aimed to have a limitation between zero and the money that participant deposited before. Unfortunately, the developer couldn't set a max value because it would depend on the money at bank. Therefore, form accepts any value that is positive and the program limits unallowed entries on the backend[Figure \ref{tab:tabellenreferenz11}]. 
+
+It was also important for the experiments to have dynamic number of rounds. The two round system of the Madies Study is limited and doesn't allow much of a difference. However, it could be meaningful for the experimenters to see difference between the participant reactions in different cases. That's why the bank run experiment has variable number of rounds and experiment ends when the bank goes bankrupt or the desired number of rounds is reached. Sadly, oTree needs a static number for number of values in the \verb|Constants| class[Section \ref{sec:intro}]. oTree needs that number, because the framework prepares the models before the game actually starts. It loops for each user and for each round. Only solution is actually a "hack" in computer science terms but it is also recommended on the official oTree documentation, so it is applied by the author of this text as well[\cite{oTreeModel2017}]. This method is setting the number of rounds to a big random value(\verb|30| in our experiment). When the actually desired round number is reached, application hides the \verb|next|button for the participants.
+
+Most of the example projects for oTree don't have the concept of a storage like in the bank run experiment. Some of them have some kind of money pool but none of them have a concept similar to personal bank accounts. The basic principle of oTree experiments consist of the calculation of the \verb|payoff| for each player and each round. In the end, sum of these payoffs are the final results. However, we have two distinct values for each player. These are money at hand and money at bank. They can't be merged together because money at bank can gain interest and also it can be nulled in case of bankruptcy. That's why, participant dictionary is used to store these two crucial values[Section \ref{sub:participant}]. Parcitipant dictionary stays same for the participant throughout the game but player fields change in each round. For example, money at hand can be reached with the \verb|player.participant.vars["money_at_hand"]| for each participant.
+
+A last concept that influenced the design of the software is the method \verb|before next page|. It is located in the 
+
+\section{Workflow}
+
+session yaratilir, setting secilir, sunu görür su metod falan
+
+
+
+\chapter{Bank Run Experiment Results} \label{cha:bankrunResults}
 
 \chapter{Future Work and Conclusion}
 
-Im Rahmen der vorliegenden Arbeit wurde ...
+\section{Evaluation of oTree Framework}
 
 % --- Falls Anhaenge gewuenscht werden: ---
 \begin{appendix} \label{anhang}
@@ -323,6 +439,19 @@ The Review of Financial Studies, Volume 6, Issue 2, pp. 327-343
 
 \bibitem[oTree Concepts(2017)]{oTreeConcepts2017} oTree. (2017). oTree Concepts,\\ \verb|http://otree.readthedocs.io/en/latest/conceptual_overview.html|
 
+\bibitem[oTree Model(2017)]{oTreeModel2017} oTree. (2017). oTree Model,\\ \verb|http://otree.readthedocs.io/en/latest/models.html|
+
+\bibitem[oTree View(2017)]{oTreeView2017} oTree. (2017). oTree View,\\ \verb|http://otree.readthedocs.io/en/latest/view.html|
+
+\bibitem[Django Template(2017)]{DjangoTemplate2017} Django. (2017). Django Template,\\ \verb|https://docs.djangoproject.com/en/1.8/ref/templates/language/|
+
+\bibitem[Diamond (2007)]{Diamond2007} Diamond, D. (2007). Banks and Liquidity Creation: A Simple Exposition of the Diamond-Dybvig Model 
+Economic Quarterly, Volume 93, Number 2, pp. 189-200
+
+\bibitem[Madies (2007)]{Madies2007} Philippe Madi`es. Self-fulfilling bank panics : how to avoid them ? an experimental study.
+Working Paper du GATE 2001-04. 2001. <halshs-00179997>
+
+\bibitem[oTree Slides(2007)]{oTreeSlides2007} Chris. oTree:An open-source platform for lab,web and field experiments.
 
 
 \end{thebibliography}

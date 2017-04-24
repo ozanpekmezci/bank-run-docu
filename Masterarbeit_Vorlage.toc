@@ -1,34 +1,41 @@
 \select@language {english}
 \select@language {english}
-\contentsline {chapter}{List of Figures}{ii}
-\contentsline {chapter}{List of Tables}{iii}
-\contentsline {chapter}{\numberline {1}Einleitung}{2}
-\contentsline {chapter}{\numberline {2}oTree}{3}
-\contentsline {section}{\numberline {2.1}Introduction to oTree}{3}
-\contentsline {section}{\numberline {2.2}Concepts}{4}
-\contentsline {subsection}{\numberline {2.2.1}Session}{4}
-\contentsline {subsection}{\numberline {2.2.2}Subsession}{4}
-\contentsline {subsection}{\numberline {2.2.3}Group}{5}
-\contentsline {subsection}{\numberline {2.2.4}Participant and Player}{5}
-\contentsline {subsection}{\numberline {2.2.5}self}{5}
-\contentsline {section}{\numberline {2.3}Abschnittsname 1}{5}
-\contentsline {section}{\numberline {2.4}Abschnittsname 2}{6}
-\contentsline {subsection}{\numberline {2.4.1}Ein Unterabschnitt}{6}
-\contentsline {subsection}{\numberline {2.4.2}Ein weiterer Unterabschnitt}{6}
-\contentsline {chapter}{\numberline {3}Bank Run Experiment}{8}
-\contentsline {chapter}{\numberline {4}Bank Run Results}{9}
-\contentsline {chapter}{\numberline {5}Future Work and Conclusion}{10}
-\contentsline {chapter}{\numberline {A}Installing oTree}{11}
-\contentsline {section}{\numberline {A.1}Installing Python}{11}
-\contentsline {subsection}{\numberline {A.1.1}Installing Python on Windows}{11}
-\contentsline {subsection}{\numberline {A.1.2}Installing Python on Mac}{12}
-\contentsline {subsection}{\numberline {A.1.3}Installing Python on Linux}{12}
-\contentsline {section}{\numberline {A.2}Installing oTree}{12}
-\contentsline {section}{\numberline {A.3}Running oTree}{12}
-\contentsline {section}{\numberline {A.4}The Development Environment}{13}
-\contentsline {section}{\numberline {A.5}Troubleshooting}{13}
-\contentsline {subsection}{\numberline {A.5.1}Developer needs to have multiple python versions installed}{13}
-\contentsline {subsection}{\numberline {A.5.2}Developer needs to use dictionary values in template files}{14}
-\contentsline {subsection}{\numberline {A.5.3}Developers need to have custom number of rounds}{14}
-\contentsline {section}{\numberline {A.6}Erster Teil des Anhangs}{14}
-\contentsline {section}{\numberline {A.7}Zweiter Abschnitt dieses Anhangs}{14}
+\contentsline {chapter}{List of Figures}{i}
+\contentsline {chapter}{List of Tables}{ii}
+\contentsline {chapter}{\numberline {1}Introduction }{2}
+\contentsline {section}{\numberline {1.1}Introduction to oTree}{2}
+\contentsline {section}{\numberline {1.2}Concepts}{3}
+\contentsline {subsection}{\numberline {1.2.1}Session}{3}
+\contentsline {subsection}{\numberline {1.2.2}Subsession}{3}
+\contentsline {subsection}{\numberline {1.2.3}Group}{4}
+\contentsline {subsection}{\numberline {1.2.4}Participant and Player}{4}
+\contentsline {subsection}{\numberline {1.2.5}self}{4}
+\contentsline {section}{\numberline {1.3}Components}{5}
+\contentsline {subsection}{\numberline {1.3.1}Model}{5}
+\contentsline {subsection}{\numberline {1.3.2}View}{6}
+\contentsline {subsubsection}{Page}{7}
+\contentsline {subsubsection}{Wait Page}{8}
+\contentsline {subsection}{\numberline {1.3.3}Template}{8}
+\contentsline {section}{\numberline {1.4}Introduction to Bank Runs}{8}
+\contentsline {subsection}{\numberline {1.4.1}The Madies Study}{9}
+\contentsline {chapter}{\numberline {2}Bank Run Experiment}{11}
+\contentsline {section}{\numberline {2.1}Setting and Environment}{11}
+\contentsline {section}{\numberline {2.2}oTree Platform}{12}
+\contentsline {section}{\numberline {2.3}Workflow}{14}
+\contentsline {chapter}{\numberline {3}Bank Run Experiment Results}{15}
+\contentsline {chapter}{\numberline {4}Future Work and Conclusion}{16}
+\contentsline {section}{\numberline {4.1}Evaluation of oTree Framework}{16}
+\contentsline {chapter}{\numberline {A}Installing oTree}{17}
+\contentsline {section}{\numberline {A.1}Installing Python}{17}
+\contentsline {subsection}{\numberline {A.1.1}Installing Python on Windows}{17}
+\contentsline {subsection}{\numberline {A.1.2}Installing Python on Mac}{18}
+\contentsline {subsection}{\numberline {A.1.3}Installing Python on Linux}{18}
+\contentsline {section}{\numberline {A.2}Installing oTree}{18}
+\contentsline {section}{\numberline {A.3}Running oTree}{18}
+\contentsline {section}{\numberline {A.4}The Development Environment}{19}
+\contentsline {section}{\numberline {A.5}Troubleshooting}{19}
+\contentsline {subsection}{\numberline {A.5.1}Developer needs to have multiple python versions installed}{19}
+\contentsline {subsection}{\numberline {A.5.2}Developer needs to use dictionary values in template files}{20}
+\contentsline {subsection}{\numberline {A.5.3}Developers need to have custom number of rounds}{20}
+\contentsline {section}{\numberline {A.6}Erster Teil des Anhangs}{20}
+\contentsline {section}{\numberline {A.7}Zweiter Abschnitt dieses Anhangs}{20}

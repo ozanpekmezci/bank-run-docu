@@ -1,14 +1,20 @@
 \select@language {english}
 \select@language {english}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Abstraction of MVT Pattern[\cite {DjangoOverview2017}]}}{2}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Conceptual Overview of oTree[\cite {oTreeConcepts2017}]}}{3}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Object Hiearchy of oTree[\cite {oTreeConcepts2017}]}}{4}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Concept of Participant explained[\cite {oTreeConcepts2017}]}}{4}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Reachable objects via self[\cite {oTreeConcepts2017}]}}{5}
+\contentsline {figure}{\numberline {1.6}{\ignorespaces An example usage of the method[\cite {oTreeModel2017}]}}{6}
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Player class of bank run experiment}}{6}
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Page sequence list of bank run experiment}}{7}
+\contentsline {figure}{\numberline {1.9}{\ignorespaces A Page class of the bank run experiment}}{7}
+\contentsline {figure}{\numberline {1.10}{\ignorespaces Some code sample of a HTML file[\cite {DjangoTemplate2017}].}}{8}
+\contentsline {figure}{\numberline {1.11}{\ignorespaces Visualisation of the Madies Study[\cite {Madies2007}]}}{9}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Abstraction of MVT Pattern[\cite {DjangoOverview2017}]}}{3}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Conceptual Overview of oTree[\cite {oTreeConcepts2017}]}}{4}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Object Hiearchy of oTree[\cite {oTreeConcepts2017}]}}{4}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Concept of Participant explained[\cite {oTreeConcepts2017}]}}{5}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Bildbeschriftung}}{6}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Form from bank run doesn't allow negative values }}{12}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Python Installation Screen on Windows}}{11}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Python Installation Screen on Windows}}{17}
