@@ -211,7 +211,7 @@ As it was explained in the introduction part of oTree[\ref{sec:intro}],the view 
 	\label{fig:picture10}
 \end{figure}
 
-\subsubsection{Page}
+\subsubsection{Page}\label{sub:page}
 
 Pages contain information about the code that is going to run on client-side(users browser). Pages can describe the form that is shown on the page and can connect the server-side implementation of the form with the client-side implementation. These get set with \verb|form_model and form_fields| variables[Figure \ref{fig:picture10}].
 
@@ -339,7 +339,7 @@ It was also important for the experiments to have dynamic number of rounds. The 
 
 Most of the example projects for oTree don't have the concept of a storage like in the bank run experiment. Some of them have some kind of money pool but none of them have a concept similar to personal bank accounts. The basic principle of oTree experiments consist of the calculation of the \verb|payoff| for each player and each round. In the end, sum of these payoffs are the final results. However, we have two distinct values for each player. These are money at hand and money at bank. They can't be merged together because money at bank can gain interest and also it can be nulled in case of bankruptcy. That's why, participant dictionary is used to store these two crucial values[Section \ref{sub:participant}]. Parcitipant dictionary stays same for the participant throughout the game but player fields change in each round. For example, money at hand can be reached with the \verb|player.participant.vars["money_at_hand"]| for each participant.
 
-A last concept that influenced the design of the software is the method \verb|before next page|. It is located in the 
+A last concept that influenced the design of the software is the method \verb|before next page|. It is located in page classes of the view file[\ref{sub:page}]. This function is important to order participants by their response time. In this experiment, we need to order participants by their order of withdrawal because bank can go bankrupt after withdrawal of each partcipant and the bank can't give people money if it has no money left. This function is called for each participant separately when they send responses on a specific page.
 
 \section{Workflow}
 
