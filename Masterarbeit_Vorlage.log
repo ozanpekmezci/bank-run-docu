@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.26)  25 APR 2017 19:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.26)  27 APR 2017 14:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -349,11 +349,7 @@ Package: moreverb 2008/06/03 v2.3a `more' verbatim facilities
 \c@saveeqn=\count130
 \c@satz=\count131
 )
-(./Masterarbeit_Vorlage.aux
-
-LaTeX Warning: Label `fig:picture10' multiply defined.
-
-)
+(./Masterarbeit_Vorlage.aux)
 \openout1 = `Masterarbeit_Vorlage.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
@@ -368,7 +364,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
 LaTeX Font Info:    ... okay on input line 21.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
 LaTeX Font Info:    ... okay on input line 21.
- (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
 
@@ -511,228 +508,239 @@ Underfull \hbox (badness 10000) in paragraph at lines 68--69
 \tf@lof=\write5
 \openout5 = `Masterarbeit_Vorlage.lof'.
 
- [2
-
-]
-(./Masterarbeit_Vorlage.lot)
-\tf@lot=\write6
-\openout6 = `Masterarbeit_Vorlage.lot'.
-
  [1
 
 ]
 Chapter 1.
-<django_mvc_mvt_pattern.jpg, id=32, 451.6875pt x 203.25937pt>
+<django_mvc_mvt_pattern.jpg, id=29, 451.6875pt x 203.25937pt>
 File: django_mvc_mvt_pattern.jpg Graphic file (type jpg)
 
 <use django_mvc_mvt_pattern.jpg>
-Package pdftex.def Info: django_mvc_mvt_pattern.jpg used on input line 105.
+Package pdftex.def Info: django_mvc_mvt_pattern.jpg used on input line 100.
 (pdftex.def)             Requested size: 341.43306pt x 153.65372pt.
  [2
 
  <./django_mvc_mvt_pattern.jpg>]
-<oTreeConcepts.png, id=38, 452.69125pt x 171.64125pt>
+<oTreeConcepts.png, id=34, 452.69125pt x 171.64125pt>
 File: oTreeConcepts.png Graphic file (type png)
  <use oTreeConcepts.png>
-Package pdftex.def Info: oTreeConcepts.png used on input line 122.
+Package pdftex.def Info: oTreeConcepts.png used on input line 117.
 (pdftex.def)             Requested size: 341.43306pt x 129.45607pt.
 
-<objectHierarchy.png, id=39, 167.62625pt x 104.39pt>
+<objectHierarchy.png, id=35, 167.62625pt x 104.39pt>
 File: objectHierarchy.png Graphic file (type png)
  <use objectHierarchy.png>
-Package pdftex.def Info: objectHierarchy.png used on input line 137.
+Package pdftex.def Info: objectHierarchy.png used on input line 132.
 (pdftex.def)             Requested size: 170.71652pt x 106.31389pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<participant.png, id=40, 452.69125pt x 126.4725pt>
+<participant.png, id=36, 452.69125pt x 126.4725pt>
 File: participant.png Graphic file (type png)
  <use participant.png>
-Package pdftex.def Info: participant.png used on input line 148.
+Package pdftex.def Info: participant.png used on input line 143.
 (pdftex.def)             Requested size: 341.43306pt x 95.38869pt.
 
 [3 <./oTreeConcepts.png>]
-<object_model_self.png, id=45, 405.01312pt x 262.73157pt>
+<object_model_self.png, id=42, 405.01312pt x 262.73157pt>
 File: object_model_self.png Graphic file (type png)
 
 <use object_model_self.png>
-Package pdftex.def Info: object_model_self.png used on input line 159.
+Package pdftex.def Info: object_model_self.png used on input line 154.
 (pdftex.def)             Requested size: 341.43306pt x 221.49078pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [4 <./objectHierarchy.png> <./participant.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
-[]\OT1/cmr/m/n/12 Constants class is the place that put vari-ables that don't e
-ver
+Underfull \hbox (badness 10000) in paragraph at lines 174--175
+[]\OT1/cmr/m/n/12 Constants class is the place to put vari-ables that don't eve
+r
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
+Underfull \hbox (badness 10000) in paragraph at lines 174--175
 \OT1/cmr/m/n/12 change in the game. The class has three re-quired fields, which
  are
  []
 
 
-Underfull \hbox (badness 1755) in paragraph at lines 179--180
+Underfull \hbox (badness 1755) in paragraph at lines 174--175
 []\OT1/cmtt/m/n/12 name_in_url, players_per_group and num_rounds\OT1/cmr/m/n/12
  . []\OT1/cmtt/m/n/12 name_in_url \OT1/cmr/m/n/12 is the name of
  []
 
 [5 <./object_model_self.png>]
-<before_session_starts.png, id=54, 699.61375pt x 98.3675pt>
+<before_session_starts.png, id=51, 699.61375pt x 98.3675pt>
 File: before_session_starts.png Graphic file (type png)
 
 <use before_session_starts.png>
-Package pdftex.def Info: before_session_starts.png used on input line 182.
+Package pdftex.def Info: before_session_starts.png used on input line 177.
 (pdftex.def)             Requested size: 341.43306pt x 48.00685pt.
 
-<playerModel.png, id=55, 551.05875pt x 150.5625pt>
+<playerModel.png, id=52, 551.05875pt x 150.5625pt>
 File: playerModel.png Graphic file (type png)
  <use playerModel.png>
-Package pdftex.def Info: playerModel.png used on input line 191.
+Package pdftex.def Info: playerModel.png used on input line 186.
 (pdftex.def)             Requested size: 341.43306pt x 93.29033pt.
 
-<page_sequence.png, id=56, 172.645pt x 147.55125pt>
+Underfull \hbox (badness 1603) in paragraph at lines 191--192
+\OT1/cmr/m/n/12 ited from Django and can be used on the start-ing lines of clas
+ses. The field
+ []
+
+<page_sequence.png, id=53, 172.645pt x 147.55125pt>
 File: page_sequence.png Graphic file (type png)
  <use page_sequence.png>
-Package pdftex.def Info: page_sequence.png used on input line 199.
+Package pdftex.def Info: page_sequence.png used on input line 194.
 (pdftex.def)             Requested size: 170.71652pt x 145.90506pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [6 <./before_session_starts.png> <./playerModel.png>]
-<page.png, id=62, 532.99126pt x 251.94125pt>
+<page.png, id=59, 532.99126pt x 251.94125pt>
 File: page.png Graphic file (type png)
  <use page.png>
-Package pdftex.def Info: page.png used on input line 209.
+Package pdftex.def Info: page.png used on input line 204.
 (pdftex.def)             Requested size: 341.43306pt x 161.39561pt.
- [7 <./page_sequence.png> <./page.png>] <html.png, id=68, 819.06pt x 369.38pt>
+ [7 <./page_sequence.png> <./page.png>] <html.png, id=65, 819.06pt x 369.38pt>
 File: html.png Graphic file (type png)
  <use html.png>
-Package pdftex.def Info: html.png used on input line 227.
+Package pdftex.def Info: html.png used on input line 222.
 (pdftex.def)             Requested size: 341.43306pt x 153.9831pt.
 
-[8 <./html.png>] <madies.png, id=74, 618.31pt x 352.31625pt>
+[8 <./html.png>] <madies.png, id=70, 618.31pt x 352.31625pt>
 File: madies.png Graphic file (type png)
  <use madies.png>
-Package pdftex.def Info: madies.png used on input line 249.
+Package pdftex.def Info: madies.png used on input line 244.
 (pdftex.def)             Requested size: 341.43306pt x 194.55403pt.
 
 [9 <./madies.png>] [10]
 Chapter 2.
 [11
 
-] <minValue.png, id=85, 334.24875pt x 138.5175pt>
+] <minValue.png, id=82, 334.24875pt x 138.5175pt>
 File: minValue.png Graphic file (type png)
  <use minValue.png>
-Package pdftex.def Info: minValue.png used on input line 330.
+Package pdftex.def Info: minValue.png used on input line 282.
 (pdftex.def)             Requested size: 341.43306pt x 141.50578pt.
 
-Underfull \hbox (badness 1558) in paragraph at lines 336--337
+Underfull \hbox (badness 1558) in paragraph at lines 288--289
 []\OT1/cmr/m/n/12 Withdrawals of dy-namic val-ues are triv-ial in oTree, since 
 it re-quires only one
  []
 
 
-Underfull \hbox (badness 1132) in paragraph at lines 336--337
+Underfull \hbox (badness 1132) in paragraph at lines 288--289
 []\OT1/cmtt/m/n/12 models.CurrencyField \OT1/cmr/m/n/12 field in mod-els file a
 nd cor-re-spond-ing form fields in the
  []
 
 [12 <./minValue.png>] [13]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 346.
+<create_session.png, id=90, 1080.035pt x 560.0925pt>
+File: create_session.png Graphic file (type png)
+ <use create_session.png>
+Package pdftex.def Info: create_session.png used on input line 299.
+(pdftex.def)             Requested size: 341.43306pt x 177.06248pt.
 
+<before_session_starts2.png, id=91, 653.44125pt x 280.04625pt>
+File: before_session_starts2.png Graphic file (type png)
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 346.
- [14]
+<use before_session_starts2.png>
+Package pdftex.def Info: before_session_starts2.png used on input line 309.
+(pdftex.def)             Requested size: 341.43306pt x 146.32567pt.
+ [14 <./create_session.png> <./before_session_starts2.png>] <admin_screen.png, 
+id=97, 1049.9225pt x 586.19pt>
+File: admin_screen.png Graphic file (type png)
+
+<use admin_screen.png>
+Package pdftex.def Info: admin_screen.png used on input line 317.
+(pdftex.def)             Requested size: 341.43306pt x 190.62576pt.
+ [15 <./admin_screen.png>]
+<result_vars.png, id=103, 875.27pt x 261.97874pt>
+File: result_vars.png Graphic file (type png)
+ <use result_vars.png>
+Package pdftex.def Info: result_vars.png used on input line 337.
+(pdftex.def)             Requested size: 341.43306pt x 102.19528pt.
+
+[16 <./result_vars.png>] [17]
 Chapter 3.
-[15
+[18
 
-]
-Chapter 4.
-[16
-
-]
+] [19]
 Appendix A.
 
-Underfull \hbox (badness 1661) in paragraph at lines 366--368
+Underfull \hbox (badness 1661) in paragraph at lines 385--387
 []\OT1/cmtt/m/n/12 https://www.python.org/downloads/release/python-360/\OT1/cmr
 /m/n/12 . Users need to choose
  []
 
-<py-win-installer.png, id=105, 500.62032pt x 307.90031pt>
+<py-win-installer.png, id=117, 500.62032pt x 307.90031pt>
 File: py-win-installer.png Graphic file (type png)
 
 <use py-win-installer.png>
-Package pdftex.def Info: py-win-installer.png used on input line 370.
+Package pdftex.def Info: py-win-installer.png used on input line 389.
 (pdftex.def)             Requested size: 341.43306pt x 210.0037pt.
- [17
 
- <./py-win-installer.png>]
-Underfull \hbox (badness 5622) in paragraph at lines 381--382
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 5622) in paragraph at lines 400--401
 \OT1/cmr/m/n/12 The of-fi-cial oTree doc-u-men-ta-tion rec-om-mends us-ing []\O
 T1/cmtt/m/n/12 Homebrew \OT1/cmr/m/n/12 pack-age man-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 381--382
+Underfull \hbox (badness 10000) in paragraph at lines 400--401
 \OT1/cmr/m/n/12 ager on Ma-cOS to in-stall Python. How-ever, mac users need to 
 in-stall
  []
 
+[20
 
-Underfull \hbox (badness 6658) in paragraph at lines 393--394
+]
+Underfull \hbox (badness 6658) in paragraph at lines 412--413
 \OT1/cmr/m/n/12 Users that run oTree for the first time need to type in the com
 -mand
  []
 
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 407--408
+[21 <./py-win-installer.png>] [22]
+Underfull \hbox (badness 10000) in paragraph at lines 434--435
 []\OT1/cmr/m/n/12 Developers can in-stall the Python pack-age []\OT1/cmtt/m/n/1
 2 virtualenv \OT1/cmr/m/n/12 just with
  []
 
 
-Underfull \hbox (badness 1454) in paragraph at lines 407--408
+Underfull \hbox (badness 1454) in paragraph at lines 434--435
 []\OT1/cmtt/m/n/12 pip install virtualenv \OT1/cmr/m/n/12 com-mand. Like the na
 me sug-gests, this lit-tle pro-gram
  []
 
-[19] [20] [21
+[23] [24
 
-] [22] (./Masterarbeit_Vorlage.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+] [25] (./Masterarbeit_Vorlage.aux) ) 
 Here is how much of TeX's memory you used:
- 4531 strings out of 493089
- 60502 string characters out of 6134842
- 138477 words of memory out of 5000000
- 7868 multiletter control sequences out of 15000+600000
+ 4540 strings out of 493089
+ 60725 string characters out of 6134842
+ 138550 words of memory out of 5000000
+ 7879 multiletter control sequences out of 15000+600000
  11549 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,12n,43p,1159b,462s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/
-local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/l
-ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/lo
-cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Masterarbeit_Vorlage.pdf (27 pages, 622561 bytes).
+ 38i,12n,43p,1160b,460s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsl12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmtt12.pfb>
+Output written on Masterarbeit_Vorlage.pdf (29 pages, 1012073 bytes).
 PDF statistics:
- 153 PDF objects out of 1000 (max. 8388607)
- 88 compressed objects within 1 object stream
+ 159 PDF objects out of 1000 (max. 8388607)
+ 86 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 96 words of extra memory for PDF output out of 10000 (max. 10000000)
 
